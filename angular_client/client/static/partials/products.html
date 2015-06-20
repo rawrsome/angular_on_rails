@@ -1,0 +1,14 @@
+<div ng-controller="productsController">
+	<h1>Products</h1>
+	<input type='text' ng-model='filter_title' placeholder='Filter..'>
+	<br>
+	<div class="product_iamge" ng-repeat="product in products | filter: filter_title">
+		<a ng-href="#/show/{{product.id}}" ng-click="showProduct(product.id)">
+			<img src="{{product.image.src}}">
+		</a>
+		<div class="product_info">
+			<h5>{{product.title}}</h5>
+			<p>$ {{product.variants[0].price}}</p>
+		</div> <!--end product_info-->
+ 	</div> <!--end product_image-->
+</div> <!--end ng-controller-->
